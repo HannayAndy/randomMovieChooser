@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+   
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Random Movie Chooser </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+   
+
+</head>
+
+<body>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+
+
+            
+            <div class="sidebar-wrapper">
+            </div>
+
+        </div>
+        <div class="main-panel" style="background-image:url(curtain.png);"  >
+            
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-lg" style="background-image:url(curtain.png);" >
+               
+            </div>
+            <div class="content" >
+                <div class="row">
+                    <div class="col-lg-10" >
+                        <div class="card card-chart" >
+                            <div class="card-header">
+                                <h5 class="card-category"><b></b></h5>
+                                <div class="card-icon">
+                                    <i class="material-icons md-48 "></i>
+                                </div>
+                                <h4 class="card-title">Andy's Random Movie Chooser</h4>
+                               
+                            </div>
+                            <div class="card-body">
+							<strong><h1></h1></strong>
+                <div class="bg-light">
+
+                <h5>1. Enter you movie (or anything really) choices below one at a time</h5>
+                <h5>2. Once you have completed your list, press "Choose your movie" </h5>
+                <h5>3. Enjoy your movie</h5>
+                    <img src="popcorn.png" height=160" width="103" alt="logo"/>
+                </div>
+
+                <input type="text" name="text" id="inputText"/>
+                <button onclick="pushData();">add</button>
+                <h4>Your Movie List</h4>
+                <p id="pText"></p>
+
+
+                                <div class="padded">
+                                <button class="btn-info" onclick="loaded(); play();">Choose Your Movie!!</button>
+                                <audio id="audio" src="drum_roll.wav" ></audio>
+                                <h4>Your randomly chosen movie is:</h4>
+                                <h1 class="text-uppercase">
+                                    <!--h1><span id="movie"></span><h1/-->
+                                    <strong><span id="movie"></span> </strong>
+                                </h1>
+                                <hr>
+                                    <strong> <p id="demo"></p></strong>
+                            </div>
+                                
+                            </div>
+                            
+</body>
+<!--   Core JS Files   -->
+
+<script src="movieChooser.js" defer></script>
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chart JS -->
+<script src="../assets/js/plugins/chartjs.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/now-ui-dashboard.js?v=1.0.1"></script>
+<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/demo/demo.js"></script>
+<script>
+    $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+    });
+</script>
+
+</html>
