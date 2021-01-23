@@ -28,7 +28,7 @@ function loaded () {
     document.getElementById("movie").innerHTML = chosenMovie;
 
     
-    $.getJSON("http://omdbapi.com/?t="+chosenMovie+"&apikey=58fa79c0&",
+    $.getJSON("https://omdbapi.com/?t="+chosenMovie+"&apikey=58fa79c0&",
     function(result){console.log(result);  
     
        document.getElementById("outcome").innerHTML = "Your result is "+ chosenMovie + " with a metascore of "+ result.Metascore;
