@@ -26,13 +26,30 @@ function loaded () {
 
     var chosenMovie = (movies[movieNum]);
     document.getElementById("movie").innerHTML = chosenMovie;
-    var str = "Find out where to watch it here:";
-    var result = str.link("https://www.justwatch.com/au/search?q="+chosenMovie);
-    document.getElementById("demo").innerHTML = result;
-    //var str = "Free Web Building Tutorials!";
-    //var result = str.link("https://www.w3schools.com");
-    //document.getElementById("demo").innerHTML = result;
 
+    
+    $.getJSON("http://omdbapi.com/?t="+chosenMovie+"&apikey=58fa79c0&",
+    function(result){console.log(result);  
+    
+       document.getElementById("outcome").innerHTML = "Your result is "+ chosenMovie + " with a metascore of "+ result.Metascore;
+       document.getElementById("release").innerHTML = "Release Date " +result.Released
+       document.getElementById("runtime").innerHTML = "Runtime " +result.Runtime
+       document.getElementById("img").src =result.Poster
+       var str = "Find out where to watch it here:";
+       var result = str.link("https://www.justwatch.com/au/search?q="+chosenMovie);
+       document.getElementById("demo").innerHTML = result;
+       //var str = "Free Web Building Tutorials!";
+       //var result = str.link("https://www.w3schools.com");
+       //document.getElementById("demo").innerHTML = result;
+
+
+
+    });
+
+
+
+   
+    
 }
 function play(){
     var audio = document.getElementById("audio");
