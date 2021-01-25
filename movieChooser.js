@@ -16,10 +16,6 @@ function pushData()
     document.getElementById('pText').innerHTML = pval;
 }
 
-//movieNum = Math.floor((Math.random() * (movies.length -1)));
-//console.log(movieNum);
-//console.log(movies[movieNum]);
-//chosenMovie = (movies[movieNum]);
 
 function loaded () {
     var movieNum = Math.floor((Math.random() * movies.length ));
@@ -30,26 +26,25 @@ function loaded () {
     
     $.getJSON("https://omdbapi.com/?t="+chosenMovie+"&apikey=58fa79c0&",
     function(result){console.log(result);  
-    
-       document.getElementById("outcome").innerHTML = "Your result is "+ chosenMovie + " with a metascore of "+ result.Metascore;
+        //display result info
+       document.getElementById("outcome").innerHTML = "Your result is "+ chosenMovie ;
        document.getElementById("release").innerHTML = "Release Date " +result.Released
        document.getElementById("runtime").innerHTML = "Runtime " +result.Runtime
        document.getElementById("img").src =result.Poster
-       var str = "Find out where to watch it here:";
-       var result = str.link("https://www.justwatch.com/au/search?q="+chosenMovie);
-       document.getElementById("demo").innerHTML = result;
-       //var str = "Free Web Building Tutorials!";
-       //var result = str.link("https://www.w3schools.com");
-       //document.getElementById("demo").innerHTML = result
-        //clears previous results 
-        document.getElementById("ratings").innerHTML = " "
+       //clear rating info
+       document.getElementById("ratings").innerHTML = " "
        // gets all ratings results 
+       console.log(result.Ratings);
         $.each(result.Ratings, function(index, value) {
                var para = document.createElement("P");                 // Create a <p> element
-               para.innerHTML = value.Source + " " + value.Value;                // Insert text
+               para.innerHTML = value.Source + ":  " + value.Value;                // Insert text
                document.getElementById("ratings").appendChild(para);
    
                         });
+       var str = "Find out where to watch it here:";
+       var result = str.link("https://www.justwatch.com/au/search?q="+chosenMovie);
+       document.getElementById("demo").innerHTML = result;
+      
 
 
 
