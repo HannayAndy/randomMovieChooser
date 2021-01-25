@@ -40,7 +40,16 @@ function loaded () {
        document.getElementById("demo").innerHTML = result;
        //var str = "Free Web Building Tutorials!";
        //var result = str.link("https://www.w3schools.com");
-       //document.getElementById("demo").innerHTML = result;
+       //document.getElementById("demo").innerHTML = result
+        //clears previous results 
+        document.getElementById("ratings").innerHTML = " "
+       // gets all ratings results 
+        $.each(result.Ratings, function(index, value) {
+               var para = document.createElement("P");                 // Create a <p> element
+               para.innerHTML = value.Source + " " + value.Value;                // Insert text
+               document.getElementById("ratings").appendChild(para);
+   
+                        });
 
 
 
