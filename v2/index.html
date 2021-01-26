@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="author" content="Andrew Hannay">
+
+    <title>Random Moive Chooser</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this page -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+   
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2eae9900d9.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+      <div class="container">
+        
+        <!-- change logo -->
+        <img src="img\popcorn.png" height="75"  alt="logo"/>
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Random Movie Chooser</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#how">How To use</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#gallery">more soon</a>
+            </li>
+           
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Random Movie Chooser  </strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="bg-info">Can't decide what to watch? <br>
+              Spoiled for choice? Let's help you out here with our random movie chooer   </p>
+
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#how">Help me choose</a>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <section id="how">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+
+            <h2 class="section-heading">Help me Choose</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="download.html">
+               
+              <i class="fa fa-4x fa-clipboard-list text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Create Your List  </h3>
+              <p class="text-muted mb-0">Add Movies to your Watch-list </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+
+              <i class="fa fa-4x fa-random text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Random Magic  </h3>
+              <p class="text-muted mb-0">We randomly choose one for you</p>
+
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <a href="submit.html">
+              <i class="fa fa-4x fa-film text-primary mb-3 sr-icons"></i>
+
+              <h3 class="mb-3">Find your movie </h3>
+              <p class="text-muted mb-0">We will even try to help your find your movie.</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-smile-o text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Watch your movie!</h3>
+              <p class="text-muted mb-0">Your good to go!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <hr class="my-4">
+      
+ </section>  
+ <section id = "chooser" class="chooser">
+<div  >
+  <img  class="mx-auto d-block" src="img/popcorn.png" height="160" width="103" alt="poppy"/>
+</div>
+
+      <div class="col-lg-8 mx-auto text-center">
+
+            
+
+        <input type="text" name="text" id="inputText" onkeydown="if (event.keyCode == 13){pushData(); inputText.value =''; }"/>
+        
+  
+        <button onclick="pushData(); inputText.value ='';">add to list</button>
+        <h4>Your Movie List</h4>
+        <h4 id="pText" class="white"></h4>
+
+
+                    
+                      <button class="btn-info" onclick="loaded(); play(); ">Choose Your Movie!!</button>
+                      <audio id="audio" src="drum_roll.wav" ></audio>
+                      <h4>Your randomly chosen movie is:</h4>
+                      <h1 class="text-uppercase">
+                          <!--h1><span id="movie"></span><h1/-->
+                          <strong><span id="movie"></span> </strong>
+                      </h1>
+                      <strong> <p id="outcome"></p></strong>
+                      <h4 id="release" ></h4>
+                      <h4 id="runtime" ></h4>
+                      <h4 id="ratings" ></h4>
+                      <img id="img" src="https://via.placeholder.com/150"    >
+        
+                      <hr>
+                          <strong> <p id="demo" class="text-muted mb-0"></p></strong>
+                  </div>
+              </div>
+            </div>
+          </div>
+  </section>
+           
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+  <script src="movieChooser.js" defer></script>
+</html>
