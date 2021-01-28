@@ -457,3 +457,11 @@ tr:hover {
 body.specialbg {
     background-color: #071202;
 }
+
+.specialImg {
+    width: 60%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  

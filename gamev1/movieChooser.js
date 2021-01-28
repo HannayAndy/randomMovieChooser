@@ -36,6 +36,7 @@ function loaded () {
        document.getElementById("runtime").innerHTML = "metascore " +myGame.metacritic
        
        document.getElementById("img").src =myGame.short_screenshots[1].image
+       document.getElementById("img0").src =myGame.short_screenshots[2].image
        document.getElementById("chooser").style.backgroundImage =  "url("+myGame.background_image+")";
        //clear rating info
        document.getElementById("ratings").innerHTML = " "
