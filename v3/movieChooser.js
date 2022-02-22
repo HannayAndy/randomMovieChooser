@@ -20,6 +20,7 @@ function pushData()
 
 
 function loaded () {
+    clearImages(); 
     var movieNum = Math.floor((Math.random() * movies.length ));
 
     var chosenMovie = (movies[movieNum]);
@@ -88,7 +89,7 @@ function loaded () {
        document.getElementById("rotten").appendChild(rtlink); 
        
        var link = document.createElement('a')
-       link.href= "https://www.imdb.com/find?q=frog"+chosenMovie;
+       link.href= "https://www.imdb.com/find?q="+chosenMovie;
        var img = new Image(200, 100); // width, height
        img.src = "imdb.png"; 
        link.appendChild(img)
@@ -106,6 +107,19 @@ function loaded () {
    
     
 }
+
+
+
+function clearImages(){
+        const imgSections = [ "imdb", 
+            "rotten", 
+            "ltrbimg", 
+            "just_watch", 
+            "img"]
+    imgSections.forEach(element => document.getElementById(element).innerHTML = "" ); 
+    
+}
+
 function play(){
     var audio = document.getElementById("audio");
     audio.play();
