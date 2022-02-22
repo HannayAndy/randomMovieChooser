@@ -30,7 +30,7 @@ function loaded () {
     document.getElementById("movie").innerHTML = chosenMovie;
 
     
-    $.getJSON("https://api.rawg.io/api/games?key=0f616123c9284efc8260b57af5346dba&search="+chosenMovie+"&search_exact=true",
+    $.getJSON("https://api.rawg.io/api/games?key=0f616123c9284efc8260b57af5346dba&search="+chosenMovie+"&search_precise=true",
     function(result){console.log(result);
         var myGame= result.results[0]  
         console.log(myGame)
